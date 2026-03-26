@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-playfair: 'Playfair Display', serif;
+  --font-dm-sans: 'DM Sans', sans-serif;
+  --brand-blue: #1B9AD2;
+  --brand-orange: #F97316;
+  --brand-yellow: #FCD34D;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-dm-sans);
+  background: #ffffff;
+  color: #1A1A2E;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--brand-blue);
+  border-radius: 3px;
+}
+
+/* Animation delays */
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+
+/* Opacity 0 default for animated elements */
+.animate-on-scroll {
+  opacity: 0;
+}
+.animate-on-scroll.visible {
+  animation: fadeUp 0.7s ease-out forwards;
+}
+
+/* Paw print watermark */
+.paw-watermark {
+  position: absolute;
+  opacity: 0.06;
+  pointer-events: none;
+}
+
+/* Phone mockup styles */
+.phone-mockup {
+  border-radius: 36px;
+  border: 3px solid #e2e8f0;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.15), 0 8px 20px rgba(0,0,0,0.08);
+  overflow: hidden;
+  background: #fff;
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, var(--brand-blue), #0e6fa0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Card hover */
+.feature-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.feature-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+}
+
+/* Repeated text watermark */
+.watermark-text {
+  font-size: 5rem;
+  font-weight: 900;
+  color: #F97316;
+  opacity: 0.08;
+  white-space: nowrap;
+  user-select: none;
+  pointer-events: none;
+  line-height: 3;
+  max-lines: 3;
+}
+
+/* @keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+} */
+/* .marquee {
+  animation: marquee 20s linear infinite;
+} */
